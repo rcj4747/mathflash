@@ -51,6 +51,10 @@ def main():
         a = random.randint(1, 12)
         b = random.randint(1, 12)
 
+        # Always have 'a' be the bigger number
+        if a < b:
+            b, a = a, b
+
         actual = operations[op]['fcn'](a, b)
 
         answer = int(input(f"What is {a} {operations[op]['sym']} {b}? "))
