@@ -57,7 +57,14 @@ def main():
 
         actual = operations[op]['fcn'](a, b)
 
-        answer = int(input(f"What is {a} {operations[op]['sym']} {b}? "))
+        answer = input(f"What is {a} {operations[op]['sym']} {b}? ")
+
+        try:
+            answer = int(answer)
+        except ValueError:
+            print("That doesn't look like a number")
+            print("")
+            continue
 
         if answer == actual:
             correct = correct + 1
